@@ -1,0 +1,67 @@
+@import "mixins";
+
+@keyframes fadeinout {
+    0% {
+        @include menu__item-boxshadow-static;
+    }
+
+    50% {
+        @include menu__item-boxshadow-hover;
+    }
+
+    100% {
+        @include menu__item-boxshadow-static;
+    }
+}
+
+.menu {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        gap: 2.5rem;
+    }
+
+    &__item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s;
+        border-radius: 3rem;
+        @include menu__item-boxshadow-static;
+
+        &:hover {
+            @include menu__item-boxshadow-hover;
+            cursor: pointer;
+        }
+    }
+
+    &__item1 {
+        animation: fadeinout 1.8s ease;
+        animation-delay: 0.5s;
+    }
+
+    &__item2 {
+        animation: fadeinout 1.8s ease;
+        animation-delay: 0.7s;
+    }
+
+    &__item4 {
+        animation: fadeinout 1.8s ease;
+        animation-delay: 0.8s;
+    }
+
+    &__item3 {
+        animation: fadeinout 1.8s ease;
+        animation-delay: 1s;
+    }
+}
